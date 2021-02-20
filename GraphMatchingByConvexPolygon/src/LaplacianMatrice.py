@@ -37,7 +37,7 @@ def LaplacianMatrice_decomposed(LM):
         O.append(Matrix(V[:, i]))
     U_T = GramSchmidt(O, True)  # 特征向量施密特正交化
     U = np.transpose(U_T)  # 此时U是3D数组，输出时需要降一维度为2D数组
-    return U, Lambda
+    return U[0,:,:], Lambda
 
 
 def HistCorrelation(U1, U2, k):
